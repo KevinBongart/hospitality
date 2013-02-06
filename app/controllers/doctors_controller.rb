@@ -43,7 +43,7 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.new(params[:doctor])
 
     respond_to do |format|
-      if @doctor.save
+      if @doctor.save && @doctor.update_secretary(params[:secretary][:id])
         format.html { redirect_to @doctor, notice: 'Doctor was successfully created.' }
         format.json { render json: @doctor, status: :created, location: @doctor }
       else
@@ -59,7 +59,7 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
 
     respond_to do |format|
-      if @doctor.update_attributes(params[:doctor])
+      if @doctor.update_attributes(params[:doctor]) && @doctor.update_secretary(params[:secretary][:id])
         format.html { redirect_to @doctor, notice: 'Doctor was successfully updated.' }
         format.json { head :no_content }
       else
