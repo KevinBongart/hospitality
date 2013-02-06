@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20130206001200) do
 
   create_table "doctors", :force => true do |t|
     t.string   "name"
-    t.string   "hospital_id"
+    t.integer  "hospital_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20130206001200) do
 
   create_table "secretaries", :force => true do |t|
     t.string   "name"
-    t.string   "hospital_id"
-    t.string   "doctor_id"
+    t.integer  "hospital_id"
+    t.integer  "doctor_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
