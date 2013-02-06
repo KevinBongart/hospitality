@@ -10,6 +10,10 @@
   <%= link_to @doctor.hospital.name, @doctor.hospital %>
 </p>
 
+<p>
+  <b>Secretary:</b>
+  <%= link_to @doctor.secretary.name, @doctor.secretary if @doctor.secretary %>
+</p>
 
 <%= link_to 'Edit', edit_doctor_path(@doctor) %> |
 <%= link_to 'Back', doctors_path %>

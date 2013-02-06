@@ -7,12 +7,12 @@
 
 <p>
   <b>Hospital:</b>
-  <%= @secretary.hospital_id %>
+  <%= link_to @secretary.hospital.name, @secretary.hospital %>
 </p>
 
 <p>
   <b>Doctor:</b>
-  <%= @secretary.doctor_id %>
+  <%= link_to @secretary.doctor.name, @secretary.doctor if @secretary.doctor %>
 </p>
 
 

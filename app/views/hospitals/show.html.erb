@@ -10,11 +10,22 @@
   <%= @hospital.address %>
 </p>
 
+<h2>Doctors</h2>
+
 <ul>
   <% @hospital.doctors.each do |doctor| %>
     <li><%= link_to doctor.name, doctor %></li>
   <% end %>
   <li><%= link_to 'Add a doctor', new_doctor_path %></li>
+</ul>
+
+<h2>Secretaries</h2>
+
+<ul>
+  <% @hospital.secretaries.each do |secretary| %>
+    <li><%= link_to secretary.name, secretary %></li>
+  <% end %>
+  <li><%= link_to 'Add a secretary', new_secretary_path %></li>
 </ul>
 
 

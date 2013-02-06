@@ -13,8 +13,8 @@
 <% @secretaries.each do |secretary| %>
   <tr>
     <td><%= secretary.name %></td>
-    <td><%= secretary.hospital_id %></td>
-    <td><%= secretary.doctor_id %></td>
+    <td><%= link_to secretary.hospital.name, secretary.hospital %></td>
+    <td><%= link_to secretary.doctor.name, secretary.doctor unless secretary.doctor.blank? %></td>
     <td><%= link_to 'Show', secretary %></td>
     <td><%= link_to 'Edit', edit_secretary_path(secretary) %></td>
     <td><%= link_to 'Destroy', secretary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
