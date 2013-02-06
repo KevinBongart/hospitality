@@ -10,13 +10,13 @@
   <%= @hospital.address %>
 </p>
 
-<% if @hospital.doctors.any? %>
-  <ul>
-    <% @hospital.doctors.each do |doctor| %>
-      <li><%= link_to doctor.name, doctor %></li>
-    <% end %>
-  </ul>
-<% end %>
+<ul>
+  <% @hospital.doctors.each do |doctor| %>
+    <li><%= link_to doctor.name, doctor %></li>
+  <% end %>
+  <li><%= link_to 'Add a doctor', new_doctor_path %></li>
+</ul>
+
 
 <%= link_to 'Edit', edit_hospital_path(@hospital) %> |
 <%= link_to 'Back', hospitals_path %>
