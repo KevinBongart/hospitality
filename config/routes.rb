@@ -1,4 +1,7 @@
 Hospitality::Application.routes.draw do
+  resources :secretaries
+
+
   resources :doctors
 
 
